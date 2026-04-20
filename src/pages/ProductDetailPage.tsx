@@ -238,21 +238,21 @@ export const ProductDetailPage = () => {
             {/* Collection + category + concentration */}
             <div className="flex items-center gap-3 mb-4">
               <span
-                className="text-xs font-medium tracking-[0.3em] uppercase"
+                className="text-[10px] font-medium tracking-[0.3em] uppercase"
                 style={{ color: 'var(--color-gold)' }}
               >
                 {collectionLabel[product.collection]}
               </span>
               <span style={{ color: 'var(--color-border)' }}>·</span>
               <span
-                className="text-xs font-medium tracking-[0.2em] uppercase"
+                className="text-[10px] font-medium tracking-[0.2em] uppercase"
                 style={{ color: 'var(--color-text-secondary)' }}
               >
                 {product.category === 'men' ? 'For Him' : product.category === 'women' ? 'For Her' : 'Unisex'}
               </span>
               <span style={{ color: 'var(--color-border)' }}>·</span>
               <span
-                className="text-xs font-medium tracking-[0.2em] uppercase"
+                className="text-[10px] font-medium tracking-[0.2em] uppercase"
                 style={{ color: 'var(--color-text-secondary)' }}
               >
                 {product.concentration}

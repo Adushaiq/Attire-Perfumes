@@ -178,7 +178,7 @@ export const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.1 }}
-          className="flex flex-wrap items-center justify-center gap-6 sm:gap-12 mt-12 sm:mt-16 pt-12 sm:pt-16"
+          className="flex flex-wrap items-center justify-center gap-6 sm:gap-12 mt-6 lg:mt-12 sm:mt-16 lg:pt-12 pt-4"
           style={{ borderTop: '1px solid var(--color-border-subtle)' }}
         >
           {[
