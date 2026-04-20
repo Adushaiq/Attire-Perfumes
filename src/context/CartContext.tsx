@@ -1,0 +1,72 @@
+import React, { createContext, useContext, useState, useCallback } from 'react';
+import type { Product } from '../types/product';
+
+interface CartItem {
+  product: Product;
+  quantity: number;
+  selectedMl: number;
+  price: number;
+}
+
+interface CartContextType {
+  items: CartItem[];
+  addToCart: (product: Product, ml: number, price: number) => void;
+  removeFromCart: (productId: string, ml: number) => void;
+  updateQuantity: (productId: string, ml: number, quantity: number) => void;
+  clearCart: () => void;
+  totalItems: number;
+  totalPrice: number;
+}
+
+const CartContext = createContext<CartContextType | null>(null);
+
+export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [items, setItems] = useState<CartItem[]>([]);
+
+  const addToCart = useCallback((product: Product, ml: number, price: number) => {
+    setItems((prev) => {
+      const existing = prev.find((i) => i.product.id === product.id && i.selectedMl === ml);
+      if (existing) {
+        return prev.map((i) =>
+          i.product.id === product.id && i.selectedMl === ml
+            ? { ...i, quantity: i.quantity + 1 }
+            : i
+        );
+      }
+      return [...prev, { product, quantity: 1, selectedMl: ml, price }];
+    });
+  }, []);
+
+  const removeFromCart = useCallback((productId: string, ml: number) => {
+    setItems((prev) => prev.filter((i) => !(i.product.id === productId && i.selectedMl === ml)));
+  }, []);
+
+  const updateQuantity = useCallback((productId: string, ml: number, quantity: number) => {
+    if (quantity <= 0) {
+      setItems((prev) => prev.filter((i) => !(i.product.id === productId && i.selectedMl === ml)));
+    } else {
+      setItems((prev) =>
+        prev.map((i) =>
+          i.product.id === productId && i.selectedMl === ml ? { ...i, quantity } : i
+        )
+      );
+    }
+  }, []);
+
+  const clearCart = useCallback(() => setItems([]), []);
+
+  const totalItems = items.reduce((sum, i) => sum + i.quantity, 0);
+  const totalPrice = items.reduce((sum, i) => sum + i.price * i.quantity, 0);
+
+  return (
+    <CartContext.Provider value={{ items, addToCart, removeFromCart, updateQuantity, clearCart, totalItems, totalPrice }}>
+      {children}
+    </CartContext.Provider>
+  );
+};
+
+export const useCart = () => {
+  const ctx = useContext(CartContext);
+  if (!ctx) throw new Error('useCart must be used within CartProvider');
+  return ctx;
+};
