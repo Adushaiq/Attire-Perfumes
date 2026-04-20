@@ -49,13 +49,13 @@ export const Footer = () => {
             </p>
           </div>
           <form
-            className="flex w-full md:w-auto gap-0"
+            className="flex flex-col sm:flex-row w-full md:w-auto gap-3 sm:gap-0"
             onSubmit={(e) => e.preventDefault()}
           >
             <input
               type="email"
               placeholder="Your email address"
-              className="flex-1 md:w-72 px-5 py-3 text-sm outline-none bg-transparent border rounded-l-lg"
+              className="w-full sm:flex-1 md:w-72 px-5 py-4 sm:py-3 text-sm outline-none bg-transparent border rounded-lg sm:rounded-r-none sm:rounded-l-lg"
               style={{
                 backgroundColor: 'var(--color-bg-card)',
                 border: '1px solid var(--color-border)',
@@ -64,7 +64,7 @@ export const Footer = () => {
             />
             <button
               type="submit"
-              className="px-6 py-3 text-sm font-medium tracking-widest uppercase rounded-r-lg transition-all duration-300 hover:opacity-90"
+              className="w-full sm:w-auto px-6 py-4 sm:py-3 text-sm font-medium tracking-widest uppercase rounded-lg sm:rounded-l-none sm:rounded-r-lg transition-all duration-300 hover:opacity-90"
               style={{
                 backgroundColor: 'var(--color-gold)',
                 color: 'var(--color-bg-primary)',

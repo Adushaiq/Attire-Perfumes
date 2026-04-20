@@ -366,16 +366,16 @@ export const ProductDetailPage = () => {
                     product.stock > 20
                       ? '#4caf80'
                       : product.stock > 0
-                      ? 'var(--color-gold)'
-                      : '#cf4444',
+                        ? 'var(--color-gold)'
+                        : '#cf4444',
                 }}
               />
               <span className="text-xs" style={{ color: 'var(--color-text-secondary)' }}>
                 {product.stock > 20
                   ? 'In Stock'
                   : product.stock > 0
-                  ? `Only ${product.stock} left in stock`
-                  : 'Out of Stock'}
+                    ? `Only ${product.stock} left in stock`
+                    : 'Out of Stock'}
               </span>
             </div>
 
@@ -390,20 +390,20 @@ export const ProductDetailPage = () => {
                   backgroundColor: addedToCart
                     ? 'rgba(76,175,128,0.15)'
                     : product.stock === 0
-                    ? 'var(--color-bg-card)'
-                    : 'var(--color-gold)',
+                      ? 'var(--color-bg-card)'
+                      : 'var(--color-gold)',
                   color: addedToCart
                     ? '#4caf80'
                     : product.stock === 0
-                    ? 'var(--color-text-tertiary)'
-                    : 'var(--color-bg-primary)',
+                      ? 'var(--color-text-tertiary)'
+                      : 'var(--color-bg-primary)',
                   border: addedToCart ? '1px solid #4caf80' : 'none',
                   cursor: product.stock === 0 ? 'not-allowed' : 'pointer',
                   boxShadow: addedToCart
                     ? 'none'
                     : product.stock > 0
-                    ? '0 4px 24px rgba(201,168,76,0.3)'
-                    : 'none',
+                      ? '0 4px 24px rgba(201,168,76,0.3)'
+                      : 'none',
                 }}
               >
                 {addedToCart ? (
@@ -479,7 +479,7 @@ export const ProductDetailPage = () => {
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className="px-6 py-4 text-sm font-medium tracking-widest uppercase transition-all duration-200 relative"
+                className="flex-1 sm:flex-none px-2 sm:px-6 py-3 sm:py-4 text-[10px] sm:text-sm font-medium tracking-wide sm:tracking-widest uppercase transition-all duration-200 relative whitespace-nowrap"
                 style={{
                   color: activeTab === tab ? 'var(--color-gold)' : 'var(--color-text-secondary)',
                   letterSpacing: '0.12em',
@@ -509,7 +509,7 @@ export const ProductDetailPage = () => {
                 className="max-w-3xl"
               >
                 <p
-                  className="text-lg font-light leading-relaxed mb-8"
+                  className="text-base text-sm lg:text-lg font-light leading-relaxed mb-8 "
                   style={{ color: 'var(--color-cream-muted)' }}
                 >
                   {product.description}
@@ -584,7 +584,7 @@ export const ProductDetailPage = () => {
                           {notes.map((note) => (
                             <span
                               key={note}
-                              className="px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 hover:scale-105"
+                              className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-sm font-medium transition-all duration-200 hover:scale-105"
                               style={{
                                 backgroundColor: noteColors[type].bg,
                                 border: `1px solid ${noteColors[type].border}`,
@@ -749,7 +749,7 @@ export const ProductDetailPage = () => {
                 You May Also Like
               </h2>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
               {relatedProducts.map((p, i) => (
                 <ProductCard key={p.id} product={p} index={i} />
               ))}

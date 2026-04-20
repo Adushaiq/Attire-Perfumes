@@ -137,7 +137,7 @@ export const ProductCard = ({ product, index = 0 }: ProductCardProps) => {
           </div>
 
           {/* Product Info */}
-          <div className="p-5">
+          <div className="p-3 sm:p-5">
             {/* Collection + concentration */}
             <div className="flex items-center justify-between mb-2">
               <span
@@ -157,7 +157,7 @@ export const ProductCard = ({ product, index = 0 }: ProductCardProps) => {
 
             {/* Name */}
             <h3
-              className="text-xl font-light mb-0.5 transition-colors duration-300"
+              className="text-lg sm:text-xl font-light mb-0.5 transition-colors duration-300"
               style={{ fontFamily: 'var(--font-display)', color: 'var(--color-cream)' }}
             >
               {product.name}
@@ -176,7 +176,7 @@ export const ProductCard = ({ product, index = 0 }: ProductCardProps) => {
             )}
 
             {/* Notes preview */}
-            <div className="flex flex-wrap gap-1 mb-4">
+            <div className="hidden sm:flex flex-wrap gap-1 mb-4">
               {product.notes.top.slice(0, 2).map((note) => (
                 <span
                   key={note}
@@ -203,10 +203,10 @@ export const ProductCard = ({ product, index = 0 }: ProductCardProps) => {
             </div>
 
             {/* Price + CTA */}
-            <div className="flex items-end justify-between">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 sm:gap-0 mt-2 sm:mt-0">
               <div>
                 <span
-                  className="text-xl font-semibold"
+                  className="text-base sm:text-xl font-semibold"
                   style={{ color: 'var(--color-gold)' }}
                 >
                   ₹ {defaultSize.price.toLocaleString()}
@@ -219,7 +219,7 @@ export const ProductCard = ({ product, index = 0 }: ProductCardProps) => {
               <motion.button
                 whileTap={{ scale: 0.92 }}
                 onClick={handleAddToCart}
-                className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-300"
+                className="flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg sm:rounded-xl text-xs sm:text-sm font-medium transition-all duration-300 w-full sm:w-auto"
                 style={{
                   backgroundColor: addedToCart ? 'rgba(201,168,76,0.15)' : 'var(--color-gold)',
                   color: addedToCart ? 'var(--color-gold)' : 'var(--color-bg-primary)',
