@@ -47,7 +47,7 @@ export const HeroSection = () => {
   return (
     <section
       ref={ref}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-[100dvh] flex flex-col justify-center pt-24 pb-12 overflow-hidden"
       style={{ backgroundColor: 'var(--color-bg-primary)' }}
     >
       {/* Background gradient orbs */}
@@ -80,7 +80,7 @@ export const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <motion.div style={{ y, opacity }} className="relative z-10 text-center px-6 max-w-5xl mx-auto">
+      <motion.div style={{ y, opacity }} className="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto w-full">
         {/* Eyebrow */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -88,15 +88,15 @@ export const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="flex items-center justify-center gap-3 mb-8"
         >
-          <div className="divider-gold w-16" />
+          <div className="divider-gold w-8 sm:w-16 hidden sm:block" />
           <span
-            className="flex items-center gap-2 text-xs font-medium tracking-[0.4em] uppercase"
+            className="flex items-center gap-2 text-[10px] sm:text-xs font-medium tracking-[0.2em] sm:tracking-[0.4em] uppercase"
             style={{ color: 'var(--color-gold)' }}
           >
             <Sparkles size={12} />
             Luxury Fragrance Collection
           </span>
-          <div className="divider-gold w-16" />
+          <div className="divider-gold w-8 sm:w-16 hidden sm:block" />
         </motion.div>
 
         {/* Main headline — staggered word animation */}
@@ -178,7 +178,7 @@ export const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.1 }}
-          className="flex items-center justify-center gap-12 mt-16 pt-16"
+          className="flex flex-wrap items-center justify-center gap-6 sm:gap-12 mt-12 sm:mt-16 pt-12 sm:pt-16"
           style={{ borderTop: '1px solid var(--color-border-subtle)' }}
         >
           {[

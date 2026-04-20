@@ -287,15 +287,15 @@ export const ShopPage = () => {
             style={{ backgroundColor: 'var(--color-gold)' }}
           />
         </div>
-        <div className="relative z-10 flex items-center justify-center gap-3 mb-3">
-          <div className="divider-gold w-12" />
-          <span className="text-xs font-medium tracking-[0.4em] uppercase" style={{ color: 'var(--color-gold)' }}>
+        <div className="relative z-10 flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-3">
+          <div className="divider-gold w-8 sm:w-12 hidden sm:block" />
+          <span className="text-[10px] sm:text-xs font-medium tracking-[0.2em] sm:tracking-[0.4em] uppercase" style={{ color: 'var(--color-gold)' }}>
             {collection === 'daily' ? '₹ 399 · 30ml' : collection === 'premium' ? '₹ 499 · 30ml' : collection === 'luxury' ? '₹ 599 · 30ml' : 'The Full Catalogue'}
           </span>
-          <div className="divider-gold w-12" />
+          <div className="divider-gold w-8 sm:w-12 hidden sm:block" />
         </div>
         <h1
-          className="text-5xl md:text-6xl font-light"
+          className="text-4xl sm:text-5xl md:text-6xl font-light"
           style={{ fontFamily: 'var(--font-display)', color: 'var(--color-cream)' }}
         >
           {pageTitle}
@@ -305,10 +305,10 @@ export const ShopPage = () => {
         </p>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
         {/* Sort bar */}
         <div
-          className="flex items-center justify-between mb-8 pb-6"
+          className="flex flex-wrap items-center justify-between gap-4 mb-8 pb-6"
           style={{ borderBottom: '1px solid var(--color-border-subtle)' }}
         >
           <div className="flex items-center gap-4">

@@ -60,11 +60,11 @@ export const CTABanner = () => {
           transition={{ duration: 0.6 }}
           className="flex items-center justify-center gap-3 mb-6"
         >
-          <div className="divider-gold w-16" />
-          <span className="text-xs font-medium tracking-[0.4em] uppercase" style={{ color: 'var(--color-gold)' }}>
+          <div className="divider-gold w-8 sm:w-16 hidden sm:block" />
+          <span className="text-[10px] sm:text-xs font-medium tracking-[0.2em] sm:tracking-[0.4em] uppercase" style={{ color: 'var(--color-gold)' }}>
             Your Signature Awaits
           </span>
-          <div className="divider-gold w-16" />
+          <div className="divider-gold w-8 sm:w-16 hidden sm:block" />
         </motion.div>
 
         <motion.h2
@@ -72,7 +72,7 @@ export const CTABanner = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="text-5xl md:text-7xl font-light leading-tight mb-6"
+          className="text-4xl sm:text-5xl md:text-7xl font-light leading-tight mb-6"
           style={{ fontFamily: 'var(--font-display)', color: 'var(--color-cream)' }}
         >
           35 Fragrances.{' '}

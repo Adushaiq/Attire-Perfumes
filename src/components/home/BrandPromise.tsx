@@ -60,20 +60,20 @@ export const BrandPromise = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="flex items-center justify-center gap-3 mb-3"
+            className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-3"
           >
-            <div className="divider-gold w-12" />
-            <span className="text-xs font-medium tracking-[0.4em] uppercase" style={{ color: 'var(--color-gold)' }}>
+            <div className="divider-gold w-8 sm:w-12 hidden sm:block" />
+            <span className="text-[10px] sm:text-xs font-medium tracking-[0.2em] sm:tracking-[0.4em] uppercase" style={{ color: 'var(--color-gold)' }}>
               The Attire Standard
             </span>
-            <div className="divider-gold w-12" />
+            <div className="divider-gold w-8 sm:w-12 hidden sm:block" />
           </motion.div>
 
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-5xl md:text-6xl font-light max-w-2xl mx-auto leading-tight"
+            className="text-4xl sm:text-5xl md:text-6xl font-light max-w-2xl mx-auto leading-tight"
             style={{ fontFamily: 'var(--font-display)', color: 'var(--color-cream)' }}
           >
             Luxury Without Compromise
